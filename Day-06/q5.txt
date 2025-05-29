@@ -1,0 +1,10 @@
+username=$(whoami)
+echo "Enter username: "
+read entername
+
+if [ "$username" = "$entername" ]; then
+    echo "Username is correct"
+else 
+     echo "Username is incorrect"
+fi
+

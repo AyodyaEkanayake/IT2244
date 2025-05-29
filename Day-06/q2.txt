@@ -1,0 +1,25 @@
+echo "Enter the name: " 
+read name
+echo "Hi " $name
+echo "Enter the mark for subject1: "
+read x
+echo "Enter the mark for subject2: "
+read y
+echo "Enter the mark for subject3: "
+read z
+total=$(($x+$y+$z))
+avearge=$(($total/3))
+echo "Total = " $total
+echo "Average = " $avearge
+
+tail -3 txt.csv
+awk -F, '{print NF;exit}' fgh.csv
+
+cut -d,-f3 fgh.csv
+
+awk -F, '{print NF;$2}' 
+
+cut -d,-f3 fgh.csv
+
+
+

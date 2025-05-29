@@ -1,0 +1,172 @@
+Q1).Get the Clender and Date:
+
+code -
+
+To get Calender - cal
+To Get Date - date
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q2).Get the Student name and marks for the 3 subjects from the user then calculate the "Total" and "Average":
+	Output-
+		Enter the Name:Kavindu
+		Enter the mark for subject_1:
+		Enter the mark for subject_2:
+		Enter the mark for subject_3:
+		
+Code -
+		
+vi QuestionTwo.sh
+echo "Enter the Name:"
+read name
+echo "Enter the mark for subject_1:"
+read sub1
+echo "Enter the mark for subject_2:"
+read sub2
+echo "Enter the mark for subject_3:"
+read sub3
+total=$(($sub1+$sub2+$sub3))
+avg=$(($total/3))
+echo "Hi $name"
+echo "Total is: $total"
+echo "Average is: $avg"
+
+chmod 777 QuestionTwo.sh
+./QuestionTwo.sh
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q3).Create Calculator with arithmatic Operators.
+	Output-
+		Enter the first number
+		Enter the second number
+		Summation
+		Division
+		
+Code -
+		
+vi QuesionThree.sh
+echo "Enter the first number:"
+read num1
+echo "Enter the second number:"
+read num2
+sum=$(($num1+$num2))
+div=$(($num1/$num2))
+mul=$(($num1*num2))
+sub=$(($num1-$num2))
+echo "Summation: $sum"
+echo "Division: $div"
+echo "Multiplication: $mul"
+echo "Substraction: $sub"
+
+chmod 777 QuestionThree.sh
+./QuestionThree.sh
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q4).Get the days based on the User input number
+
+output-
+
+
+Code -
+	
+vi QuestionFour.sh
+
+echo "Enter the Number:"
+read number
+case $number in
+	1)
+		echo "Monday"
+		;;
+	2)
+		echo "Tuesday"
+		;;
+	3)
+		echo "Wednsday"
+		;;
+	4)
+		echo "Thursday"
+		;;
+	5)
+		echo "Friday"
+		;;
+	6)
+		echo "Saturday"
+		;;
+	7)
+		echo "Sunday"
+		;;
+	*)
+		echo "Invalid Number"
+		;;
+esac
+
+chmod 777 QuestionFour.sh
+./QuestionFour.sh
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q5). Verify whether your username is correct or not (use your name as input)
+output 
+	Enter User name
+	Mino
+	username is correct
+	Enter username
+	Nimo
+	username is correct
+	
+vi QuestionFive.sh
+	
+username="kavindu"
+echo "Enter Your UserName:"
+read name
+if["$username" -eq "$name"];
+then
+	echo "Username is Correct"
+else
+	echo "Username Is Incorrect"
+fi
+	
+chmod 777 QuestionFive.sh
+./QuestionFive.sh
+
+---------------------------------------------------------------------------------------------------------------------
+	
+Q6).Check wheather the two numbers ar
+
+output
+	Ente3r Two numbers
+	7 5
+	7 is greater than 5
+	
+vi QuestionSix.sh
+	
+echo "Enter Two Number"
+read num1 num2
+if(($num1>$num2)); then
+	echo "$num1 is Greater than $num2"
+elif((num1<$num2)); then
+	echo "$num2 is Greater than $num1"
+else
+	echo "Both numbers are Equal"
+fi
+
+chmod 777 QuestionSix.sh
+./QuestionSix.sh
+
+---------------------------------------------------------------------------------------------------------------------
+	
+Q7)
+	Create simple calculatore usint "expr" command same as the question3
+	
+
+---------------------------------------------------------------------------------------------------------------------
+	
+Q8)
+
+	
+
+		
+		
+		
