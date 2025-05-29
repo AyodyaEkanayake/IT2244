@@ -1,0 +1,43 @@
+# Babun environment self-check (automatic on launch)
+# Checks for configuration issues
+Executing daily babun check:
+Source consistent [OK]
+Prompt speed      [OK]
+File permissions  [FAILED]     # File permission issue — likely due to admin/non-admin mismatch
+Hint: Have you installed babun as admin and run it from a non-admin account?
+Connection check  [OK]
+Update check      [OUTDATED]   # Babun is outdated
+Hint: your babun is outdated. Execute 'babun update'
+Cygwin check      [OK]
+
+# Create a new empty file
+touch newfile.txt
+
+# Open the file in vi editor to add text like:
+# Apple, Grapes, Banana, Mango, Peach, Guave
+vi newfile.txt
+
+# Display the contents of the file
+more newfile.txt
+
+# Try to list hidden files ending with `.txt`
+dir .*txt         # Fails - no such hidden files
+
+# List all visible `.txt` files
+dir *.txt         # Output: happy.txt  myf.txt  newfile.txt
+
+# Find all files/folders that contain "y" in their names
+find *y*          # Output includes: happy.txt, myf.txt, story.md, my_practicals
+
+# Make newfile.txt read-only for everyone
+chmod 444 newfile.txt
+
+# List all files with detailed permissions
+ls -l             # Shows newfile.txt as -r--r--r--
+
+# Change permissions again: 
+# Owner - read/execute, Group - read, Others - read/write/execute
+chmod 547 newfile.txt
+
+# Confirm new permissions
+ls -l             # newfile.txt now: -r-xr--rwx
