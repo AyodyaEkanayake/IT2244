@@ -1,0 +1,199 @@
+// Creates an empty file named abc.tsv
+{ ~ }  » touch abc.tsv
+
+// Opens abc.tsv in the vi editor to input tab-separated data
+{ ~ }  » vi abc.tsv
+
+// Lists all files, including hidden ones (those starting with a dot)
+{ ~ }  » ls -a
+.              .gitconfig        .profile                          abc.tsv        newfile.txt~
+..             .inputrc          .vim                              abc.tsv~       story.md
+.abc.tsv.un~   .local            .viminfo                          bin            txt.csv
+.babunrc       .minttyrc         .zcompdump                        happy.txt      txt.csv~
+.bash_history  .newfile.txt.un~  .zcompdump-DESKTOP-1A8R75H-5.0.6  my_practicals
+.bash_profile  .oh-my-zsh        .zshrc                            myf.txt
+.bashrc        .pact             .zsh-update                       newfile.txt
+
+//extracts the 1st column using tab delimiter from abc.tsv
+{ ~ }  » cut -d$'\t' -f1 abc.tsv
+gg
+hh
+ii
+jj
+aa
+bb
+nn
+kk
+oo
+
+//extract 3rd field using space as delimiter (may be incorrect if file is tab-delimited)
+//Output shows full lines, possibly due to incorrect delimiter
+{ ~ }  » cut -d " " -f3 abc.tsv
+gg      45      56      78
+hh      25      15      15
+ii      88      99      43
+jj      76      67      43
+aa      67      54      21
+bb      98      76      54
+nn      76      23      87
+kk      90      98      54
+oo      87      54      65
+
+// extracts the 3rd column using tab delimiter
+{ ~ }  » cut -d$'\t' -f3 abc.tsv
+56
+15
+99
+67
+54
+76
+23
+98
+54
+
+//shows the first two lines of abc.tsv
+{ ~ }  » head -n2 abc.tsv
+gg      45      56      78
+hh      25      15      15
+
+//Shows the last two lines of abc.tsv
+{ ~ }  » tail -n2 abc.tsv
+kk      90      98      54
+oo      87      54      65
+
+//Opens the file again for editing
+{ ~ }  » vi abc.tsv
+
+
+{ ~ }  » vi abc.tsv
+{ ~ }  » cut -d\t -f1 abc.tsv
+gg 45 56 78
+hh 25 15 15
+ii 88 99 43
+jj 76 67 43
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
+kk 90 98 54
+oo 87 54 65
+
+
+// Correct if the file uses spaces; extracts the 1st field (names)
+{ ~ }  » cut -d' ' -f1 abc.tsv
+gg
+hh
+ii
+jj
+aa
+bb
+nn
+kk
+oo
+
+//Extracts the 3rd field assuming space delimiter
+{ ~ }  » cut -d' ' -f3 abc.tsv
+56
+15
+99
+67
+54
+76
+23
+98
+54
+
+//Shows the first 10 lines of abc.tsv (default behavior)
+{ ~ }  » head abc.tsv
+gg 45 56 78
+hh 25 15 15
+ii 88 99 43
+jj 76 67 43
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
+kk 90 98 54
+oo 87 54 65
+
+//Shows the first 5 lines of abc.tsv
+{ ~ }  » head -5 abc.tsv
+gg 45 56 78
+hh 25 15 15
+ii 88 99 43
+jj 76 67 43
+aa 67 54 21
+
+// shows the last 5 lines of abc.tsv
+{ ~ }  » tail -5 abc.tsv
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
+kk 90 98 54
+oo 87 54 65
+
+// Shows the first 2 lines of abc.tsv
+{ ~ }  » head -2 abc.tsv
+gg 45 56 78
+hh 25 15 15
+
+// Shows the last line of abc.tsv
+{ ~ }  » tail -1 abc.tsv
+oo 87 54 65
+
+// Displays first 100 lines (file has fewer, so it shows all)
+{ ~ }  » head -100 abc.tsv
+gg 45 56 78
+hh 25 15 15
+ii 88 99 43
+jj 76 67 43
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
+kk 90 98 54
+oo 87 54 65
+
+// Shows the 8th line by piping head into tail
+{ ~ }  » head -n8 abc.tsv | tail -n1
+kk 90 98 54
+
+
+//Prints the entire file using awk.
+{ ~ }  » awk '{print'} abc.tsv
+gg 45 56 78
+hh 25 15 15
+ii 88 99 43
+jj 76 67 43
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
+kk 90 98 54
+oo 87 54 65
+
+
+//Prints the number of columns (seperated by space).
+{ ~ }  »  awk '{print NF; exit'} abc.tsv
+4
+
+// Prints the 3rd column using awk.
+{ ~ }  » awk '{print $3'} abc.tsv
+56 
+15 
+99
+67
+54
+76
+23
+98
+54 
+
+
+// wc -l - Count the number of lines.
+{ ~ }  » wc -l abc.tsv
+9 abc.tsv
+
+// Extracts the first 10 lines and Search for "dd" in those first 10 lines.
+{ ~ }  » head -n7 abc.tsv | grep '6'
+gg 45 56 78
+jj 76 67 43
+aa 67 54 21
+bb 98 76 54
+nn 76 23 87
