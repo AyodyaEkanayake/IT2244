@@ -1,0 +1,127 @@
+error: could not lock config file /home/PCC/.gitconfig: File exists
+Error on or near line 16, last command 'trap 'catch_err "${previous_command}" ${LINENO}' ERR';
+Error on or near line 4, last command 'source "$babun_tools/git.sh"';
+Could not start plugin [git]
+rm: cannot remove ‘/d’: No such file or directory
+{ ~ }  » pwd
+/home/PCC
+{ ~ }  » who
+
+{ ~ }  » awk
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:          GNU long options: (standard)
+        -f progfile             --file=progfile
+        -F fs                   --field-separator=fs
+        -v var=val              --assign=var=val
+Short options:          GNU long options: (extensions)
+        -b                      --characters-as-bytes
+        -c                      --traditional
+        -C                      --copyright
+        -d[file]                --dump-variables[=file]
+        -D[file]                --debug[=file]
+        -e 'program-text'       --source='program-text'
+        -E file                 --exec=file
+        -g                      --gen-pot
+        -h                      --help
+        -i includefile          --include=includefile
+        -I                      --trace
+        -k                      --csv
+        -l library              --load=library
+        -L[fatal|invalid|no-ext]        --lint[=fatal|invalid|no-ext]
+        -M                      --bignum
+        -N                      --use-lc-numeric
+        -n                      --non-decimal-data
+        -o[file]                --pretty-print[=file]
+        -O                      --optimize
+        -p[file]                --profile[=file]
+        -P                      --posix
+        -r                      --re-interval
+        -s                      --no-optimize
+        -S                      --sandbox
+        -t                      --lint-old
+        -V                      --version
+
+To report bugs, use the `gawkbug' program.
+For full instructions, see the node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+Source code for gawk may be obtained from
+https://ftp.gnu.org/gnu/gawk/gawk-5.3.0.tar.gz
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+        awk '{ sum += $1 }; END { print sum }' file
+        awk -F: '{ print $1 }' /etc/passwd
+		
+sed(Stream Editor) - is a powerful command-line tool used for searching, replacing, inserting, 
+and deleting text in files or input streams. It works by processing text line by line, making it useful for automation and scripting.
+{ ~ }  » sed
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -b, --binary
+                 open files in binary mode (CR+LFs are not processed specially)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -r, --regexp-extended
+                 use extended regular expressions in the script.
+  -s, --separate
+                 consider files as separate rather than as a single continuous
+                 long stream.
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <http://www.gnu.org/software/sed/>.
+General help using GNU software: <http://www.gnu.org/gethelp/>.
+{ ~ }  » awk
+bash: /usr/bin/awk: cannot execute binary file: Exec format error
+{ ~ }  » ls -l
+total 3
+-rw-rwxr--+ 1 PCC None 109 Apr 24 14:13 abc.tsv
+-rw-rwxr--+ 1 PCC None   0 Apr 24 14:10 abc.tsv~
+lrwxrwxrwx  1 PCC None  20 Apr 23 14:11 bin -> /home/PCC/.local/bin
+-rw-rwxr--+ 1 PCC None   0 Apr 24 14:45 happy.txt
+drwxrwxr-x+ 1 PCC None   0 Apr 24 14:49 my_practicals
+-rw-rwxr--+ 1 PCC None   0 Apr 24 14:46 myf.txt
+-r-xr--rwx+ 1 PCC None  39 May  1 14:20 newfile.txt
+-rw-rwxr--+ 1 PCC None   0 May  1 14:18 newfile.txt~
+-rw-rwxr--+ 1 PCC None   0 Apr 24 14:46 story.md
+-rwxrwxrwx+ 1 PCC None   0 Apr 24 14:09 txt.csv
+-rwxrwxrwx+ 1 PCC None   0 Apr 23 14:13 txt.csv~
+{ ~ }  » ls -a
+.              .gitconfig        .profile                          abc.tsv        newfile.txt~
+..             .inputrc          .vim                              abc.tsv~       story.md
+.abc.tsv.un~   .local            .viminfo                          bin            txt.csv
+.babunrc       .minttyrc         .zcompdump                        happy.txt      txt.csv~
+.bash_history  .newfile.txt.un~  .zcompdump-DESKTOP-1A8R75H-5.0.6  my_practicals
+.bash_profile  .oh-my-zsh        .zshrc                            myf.txt
+.bashrc        .pact             .zsh-update                       newfile.txt
+{ ~ }  »
